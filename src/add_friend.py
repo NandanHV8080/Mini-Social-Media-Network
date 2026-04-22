@@ -19,3 +19,5 @@ def add_friend(users, username, friend_username):
 
     users[username]["friends"].append(friend_username)
     users[friend_username]["friends"].append(username)
+
+    return True, f"{friend_username} added as a friend successfully."
