@@ -1,0 +1,19 @@
+name: Run Python Tests
+
+on: []
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'  # or your preferred Python version
+
+    - name: Run my tests
+      run: python3 -m unittest test_methods.py
