@@ -1,0 +1,26 @@
+name: Talib Auth Tests
+
+on:
+  push:
+    branches:
+      - feature/auth
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test-talib-feature:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run Talib unittest file
+        run: python -m unittest tests/test_auth.pys
